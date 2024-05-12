@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "notion-duplicates"
-version = "0.1.0"
+version = "0.3.0"
 description = "Detect duplicated pages in a Notion database and optionallly delete them"
 authors = ["Jerome Provensal <jeromegit@provensal.com>"]
 readme = "README.md"
