@@ -54,14 +54,15 @@ Example: export {NOTION_TOKEN_ENV_VAR}=secret_abc1234""", file=sys.stderr)
 
 
 def parse_args():
-    ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    ap.add_argument('-d', '--database_id', type=str, nargs='?',
-                    help="Notion database on which to conduct the duplicate search")
+    ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+                                 description="Detect duplicated pages in a Notion database and optionally delete them")
     ap.add_argument('-m', '--max_page_count', type=int, nargs='?',
                     help="Maximum number of pages to scan for duplicated pages")
-    ap.add_argument('-D', '--delete', action='store_true', help="Do the actual deletion (in_trash=True)")
+    ap.add_argument('-D', '--delete', action='store_true', help="Do the actual deletion (set in_trash=True)")
     ap.add_argument('-M', '--max_delete_page_count', type=int, nargs='?',
                     help="Maximum number of pages to delete")
+
+    ap.add_argument('database_id', help="Notion database on which to conduct the duplicate search. See README.md for more details")
 
     return ap.parse_args()
 
@@ -71,7 +72,6 @@ def main():
 
     cli_args = parse_args()
     database_id = cli_args.database_id
-    database_id = 'a769a042d8f544ce860ba408d295ab28'
 
     delete_page_count = dupe_count = page_count = 0
     max_page_count = cli_args.max_page_count if cli_args.max_page_count else sys.maxsize
@@ -82,15 +82,15 @@ def main():
         recorded = page.record_page_by_key()
         if not recorded:
             dupe_count += 1
-        if cli_args.delete:
-            print(f"DELETING dupe page -> {page}")
-            response = notion.pages.update(page_id=page.page_id, in_trash=True)
-            delete_page_count += 1
-            if delete_page_count >= max_delete_page_count:
-                print("Reached max delete page count")
-            break
-        else:
-            print(f"This page is a dupe -> {page}")
+            if cli_args.delete:
+                print(f"DELETING dupe page -> {page}")
+                response = notion.pages.update(page_id=page.page_id, in_trash=True)
+                delete_page_count += 1
+                if delete_page_count >= max_delete_page_count:
+                    print("Reached max delete page count")
+                break
+            else:
+                print(f"This page is a dupe -> {page}")
 
         page_count += 1
         if page_count >= max_page_count:
