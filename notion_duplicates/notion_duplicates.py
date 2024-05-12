@@ -62,7 +62,8 @@ def parse_args():
     ap.add_argument('-M', '--max_delete_page_count', type=int, nargs='?',
                     help="Maximum number of pages to delete")
 
-    ap.add_argument('database_id', help="Notion database on which to conduct the duplicate search. See README.md for more details")
+    ap.add_argument('database_id',
+                    help="Notion database on which to conduct the duplicate search. See README.md for more details")
 
     return ap.parse_args()
 
@@ -88,7 +89,7 @@ def main():
                 delete_page_count += 1
                 if delete_page_count >= max_delete_page_count:
                     print("Reached max delete page count")
-                break
+                    break
             else:
                 print(f"This page is a dupe -> {page}")
 
