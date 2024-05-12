@@ -1,6 +1,17 @@
 ## Purpose
 
-Detect the duplicated pages in a Notion database and optionally delete the dupes
+**Detect the duplicated pages in a Notion database and optionally delete the dupes**
+
+### What's a duplicated page?
+It's a page with the both same _title_ and _last_edited_time_ as another document.
+
+### Motivation
+I recently decided to move away from Evernote (after being a subsciber since 2008). 
+My reason? They started to jack up their price to a level that wasn't justifiable to me.
+
+After I imported many pages from Evernote, I ended up with 100s if not 1000s of duplicated pages.
+
+This script solved the problem! 
 
 ## Install
 
