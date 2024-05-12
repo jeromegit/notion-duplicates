@@ -100,7 +100,7 @@ def main():
         elif page_count % 100 == 0:
             seconds_from_start = time.time() - start
             print(
-                f"Scanned {page_count} in {seconds_from_start:3.2f} secs or {page_count / seconds_from_start:3.0f} pages/sec")
+                f"Scanned {page_count:5d} in {seconds_from_start:5.2f} secs or {page_count / seconds_from_start:3.0f} pages/sec")
 
     print(
         f"Iterated over {page_count} pages in the database:{database_id}. Found {dupe_count} duplicated page(s) and deleted {delete_page_count} page(s)")
