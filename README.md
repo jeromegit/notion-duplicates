@@ -1,12 +1,16 @@
+<p align="center">
+<img src="images/notion_robot_small.jpg"/>
+</p>
+
 ## Purpose
 
 **Detect the duplicated pages in a Notion database and optionally delete the dupes**
 
 ### What's a duplicated page?
-It's a page with the both same _title_ and _last_edited_time_ as another document.
+It's a page with both the same _title_ and same _last_edited_time_ as another document.
 
 ### Motivation
-I recently decided to move away from Evernote (after being a subsciber since 2008). 
+I recently decided to move away from Evernote (after being a subscriber since 2008). 
 My reason? They started to jack up their price to a level that wasn't justifiable to me.
 
 The price of the yearly subscription went from $35 in 2022, to $50 in 2023 and for this year they want **$130!** 
