@@ -85,7 +85,7 @@ def main():
             dupe_count += 1
             if cli_args.delete:
                 print(f"DELETING dupe page -> {page}")
-                response = notion.pages.update(page_id=page.page_id, in_trash=True)
+                notion.pages.update(page_id=page.page_id, in_trash=True)
                 delete_page_count += 1
                 if delete_page_count >= max_delete_page_count:
                     print("Reached max delete page count")

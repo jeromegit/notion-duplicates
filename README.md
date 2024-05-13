@@ -10,6 +10,7 @@ I recently decided to move away from Evernote (after being a subsciber since 200
 My reason? They started to jack up their price to a level that wasn't justifiable to me.
 
 The price of the yearly subscription went from $35 in 2022, to $50 in 2023 and for this year they want **$130!** 
+`</RANT>`
 
 After I imported many pages from Evernote, I ended up with 100s if not 1000s of duplicated pages.
 
