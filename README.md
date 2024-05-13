@@ -28,6 +28,11 @@ pip install notion-duplicates
 
 ## Prerequisites
 
+- [Integration and Notion Token](#create-integration-and-get-your-notion-token)
+- [Connect your integration to your database](#connect-your-integration-to-your-notion-database)
+- [Identify your database_id](#identify-your-database_id)
+
+### Create integration and get your NOTION TOKEN
 You first need to create an *integration* from Notion that will create a *token*:
 
 - Go to https://www.notion.so/my-integrations
@@ -38,12 +43,14 @@ You first need to create an *integration* from Notion that will create a *token*
   - `secret_WhGbvv7jUxt88WXYZDlhxoiBtgtzGXBqPrVSA00aaBo`
 - That's the value to use as NOTION_TOKEN
 
+### Connect your integration to your Notion database
 Next, you need to connect the **notion_duplicates** integration with your Notion database:
 
 - Navigate to your Notion database such as: https://www.notion.so/a769a042d8f544ce860ba408d295ab28?v=8603013e8753451cb46496a62e6ac55f
 - Click on the **. . .** at the top right of the page
 - Select **Connect To** and select **notion_duplicates** from the list, and confirm
 
+### Identify your database_id
 Finally, you need your **database_id** that can easily be extracted from your database URL:
 
 It's the 32 characters from the / to the ?. See the example below where the database_id=a769a042d8f544ce860ba408d295ab28
